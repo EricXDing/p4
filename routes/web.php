@@ -11,6 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('content.index');
+Route::get('/', 'DirectorController@index');
+
+// function () {
+//     return view('content.index');
+// });
+
+
+Route::get('/add', 'DirectorController@addperson');
+
+Route::get('/debug', function () {
+
+    $debug = [
+        'Environment' => App::environment(),
+        'Database defaultStringLength' => Illuminate\Database\Schema\Builder::$defaultStringLength,
+    ];
+    try {
+        $databases = DB::select('SHOW DATABASES;');
+        $debug['Database connection test'] = 'PASSED';
+        $debug['Databases'] = array_column($databases, 'Database');
+    } catch (Exception $e) {
+        $debug['Database connection test'] = 'FAILED: '.$e->getMessage();
+    }
+
+    dump($debug);
 });

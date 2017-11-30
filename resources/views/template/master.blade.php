@@ -14,11 +14,11 @@
 
 	<div id="sidebar">
     <ul>
-      <li><a href="#"><b>Tools</b></a></li>
-      <li><a href="#">Definitions</a></li>
-      <li><a href="#">Link 3</a></li>
-      <li><a href="#">Link 4</a></li>
-      <li><a href="#">Link 5</a></li>
+      <li><a href="#"><b>NAVIGATION</b></a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="add">Add a Person</a></li>
+      <li><a href="#">How This Works</a></li>
+      <li><a href="#">Contact Us</a></li>
     </ul>
     <div id="sidebar-btn">
         <span></span>
