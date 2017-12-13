@@ -7,7 +7,7 @@
 	<script src="js/ckeditor/ckeditor.js"></script>
 
 	<!-- Note: the CSS file is in "public/css/style.css" -->
-		@yield('title', 'Project 3')
+		@yield('title', 'Project 4')
     @stack('head')
 
 <body>
@@ -15,10 +15,9 @@
 	<div id="sidebar">
     <ul>
       <li><a href="#"><b>NAVIGATION</b></a></li>
-      <li><a href="/">Home</a></li>
-      <li><a href="add">Add a Person</a></li>
-      <li><a href="#">How This Works</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li><a href="/">Send Message</a></li>
+      <li><a href="add">Add Person</a></li>
+      <li><a href="#">#Contact Us</a></li>
     </ul>
     <div id="sidebar-btn">
         <span></span>
@@ -38,7 +37,8 @@
 
 	<section>
 		<div id = 'main'>
-			<h1>Contract Compiler</h1>
+			<h1>Personal Network Manager</h1>
+			Send email message to important people in your life—all at once!<p>
 		@yield('content')
 
 	</div>

@@ -17,8 +17,14 @@ Route::get('/', 'DirectorController@index');
 //     return view('content.index');
 // });
 
-
-Route::get('/add', 'DirectorController@addperson');
+#add a person
+Route::get('/add', 'DirectorController@add');
+Route::post('/add', 'DirectorController@adding');
+#for getting to the forms page
+Route::get('/{id}/edit', 'DirectorController@edit');
+Route::put('/{id}/edit', 'DirectorController@update');
+#for processing
+Route::get('/{id}/delete', 'DirectorController@delete');
 
 Route::get('/debug', function () {
 
