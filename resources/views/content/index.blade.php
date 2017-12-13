@@ -10,7 +10,21 @@
 
 List of all the People in your Network
 <hr>
-@foreach($people as $name => $person)
+
+<b>Select a Relationship Category</b>
+<form action="/">
+  <select name="selection">
+      <option value>All</option>
+    @foreach ($relationships as $id => $type)
+      <option value="{{$id}}">{{$type}}</option>
+    @endforeach
+  </select>
+  <input type="submit">
+</form>
+
+<b>{{ $display }}</b>
+
+@foreach ($people as $person)
         <h2>{{ $person['name'] }}</h2>
         <p>Email: {{ $person['email'] }}</p>
         <p>Message for {{ $person['name'] }}

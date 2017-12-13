@@ -16,8 +16,8 @@
     <ul>
       <li><a href="#"><b>NAVIGATION</b></a></li>
       <li><a href="/">Send Message</a></li>
-      <li><a href="add">Add Person</a></li>
-      <li><a href="#">#Contact Us</a></li>
+      <li><a href="add">Add People</a></li>
+      <li><a href="read">PLEASE READ</a></li>
     </ul>
     <div id="sidebar-btn">
         <span></span>
@@ -38,7 +38,7 @@
 	<section>
 		<div id = 'main'>
 			<h1>Personal Network Manager</h1>
-			Send email message to important people in your life—all at once!<p>
+
 		@yield('content')
 
 	</div>

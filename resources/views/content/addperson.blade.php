@@ -16,12 +16,12 @@
       <label for='email'>* Email</label>
       <input type='text' name='email' id='email' value='{{ old('email') }}'>
 
-      <input type="checkbox" name="relations" value="coworker">Co-Worker<br>
-      <input type="checkbox" name="relations" value="classmate">Classmate<br>
-      <input type="checkbox" name="relations" value="friend">Friend<br>
-      <input type="checkbox" name="relations" value="mentor">Mentor<br>
-      <input type="checkbox" name="relations" value="other">Other<br>
-
+  @foreach ($relationships as $id => $type)
+      <input
+          type="checkbox"
+          name="relationships[]"
+          value="{{ $id }}">{{ $type }}<br>
+  @endforeach
 
       <label for='published'>Comments</label>
       <input type='text' name='comments' id='comments' value='{{ old('comments') }}'>

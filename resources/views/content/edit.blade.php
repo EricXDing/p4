@@ -20,7 +20,11 @@ Update {{ $person->name}}'s Information
       <input type='text' name='email' id='email' value='{{ old('email', $person->email) }}'><br>
 
 @foreach ($relationships as $id => $type)
-  <input type="checkbox" name="relationships[]" value="{{ $id }}">{{ $type }}<br>
+      <input
+          type="checkbox"
+          name="relationships[]"
+          {{ (in_array($type, $CurrentRelationships)) ? 'CHECKED' : ''  }}
+          value="{{ $id }}">{{ $type }}<br>
 @endforeach
 
       <label for='published'>Comments</label>

@@ -26,6 +26,10 @@ Route::put('/{id}/edit', 'DirectorController@update');
 #for processing
 Route::get('/{id}/delete', 'DirectorController@delete');
 
+Route::get('/read', 'DirectorController@read');
+
+
+
 Route::get('/debug', function () {
 
     $debug = [
