@@ -11,6 +11,15 @@ Update {{ $person->name}}'s Information
     {{  method_field('put') }}
     {{ csrf_field() }}
     * Required fields
+    <div id ='error'>
+      @if(count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+      @endif
+    </div>
     <label for='name'>Name*</label>
     <input type='text' name='name' id='name' value='{{ old('name', $person->name) }}'>
     <label for='email'>Email*</label>

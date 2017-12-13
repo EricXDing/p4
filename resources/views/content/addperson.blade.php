@@ -10,10 +10,21 @@
   <form class='form' method='POST' action='/add'>
     {{ csrf_field() }}
     * Required fields
+    <div id ='error'>
+      @if(count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                {{ $error }}
+            @endforeach
+        </ul>
+      @endif
+    </div>
     <label for='name'>Name*</label>
     <input type='text' name='name' id='name' value='{{ old('name=""') }}'>
+
     <label for='email'>Email*</label>
     <input type='text' name='email' id='email' value='{{ old('email') }}'>
+
     <div id = 'checkbox'>
       @foreach ($relationships as $id => $type)
         <input
@@ -22,7 +33,6 @@
             value="{{ $id }}">{{ $type }}<br>
       @endforeach
     </div>
-
     <label for='comments'>Comments*</label>
     <input type='text' name='comments' id='comments' value='{{ old('comments') }}'>
 

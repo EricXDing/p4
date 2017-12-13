@@ -53,6 +53,12 @@ class DirectorController extends Controller
   }
   public function adding(Request $request)
   {
+    $this->validate($request, [
+        'name' => 'required',
+        'email' => 'required',
+        'comments' => 'required'
+    ]);
+    
     $person = new Person();
     $person->name = $request->input('name');
     $person->email = $request->input('email');
@@ -81,6 +87,12 @@ class DirectorController extends Controller
   }
   public function update(request $request, $id)
   {
+    $this->validate($request, [
+        'name' => 'required',
+        'email' => 'required',
+        'comments' => 'required'
+    ]);
+
     $person = Person::find($id);
     $person->relations()->sync($request->input('relationships'));
 
