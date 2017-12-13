@@ -9,7 +9,7 @@
 
 Update {{ $person->name}}'s Information
 
-  <form method='POST' action='/{{ $person->id }}/edit'>
+  <form class='form' method='POST' action='/{{ $person->id }}'>
       {{  method_field('put') }}
       {{ csrf_field() }}
 
@@ -17,7 +17,7 @@ Update {{ $person->name}}'s Information
       <label for='Name'>* Name</label>
       <input type='text' name='name' id='name' value='{{ old('name', $person->name) }}'>
       <label for='email'>* Email</label>
-      <input type='text' name='email' id='email' value='{{ old('email', $person->email) }}'><br>
+      <input type='text' name='email' id='email' value='{{ old('email', $person->email) }}'><br></br>
 
 @foreach ($relationships as $id => $type)
       <input

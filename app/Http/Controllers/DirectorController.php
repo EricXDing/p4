@@ -41,23 +41,18 @@ class DirectorController extends Controller
           ]);
         }
 
-
         public function read()
         {
           return view('content.read');
         }
-
 
         public function add()
         {
           $relationships = Relation::getForCheckboxes();
           return view('content.addperson')->with(['relationships'=>$relationships]);
         }
-
-
         public function adding(Request $request)
         {
-          #add new book to the databases
           $person = new Person();
           $person->name = $request->input('name');
           $person->email = $request->input('email');
@@ -68,6 +63,7 @@ class DirectorController extends Controller
           return redirect('/');
         }
 
+
         public function edit($id)
         {
           $person = Person::find($id);
@@ -77,15 +73,12 @@ class DirectorController extends Controller
           {
             $CurrentRelationships[] = $relation->type;
           }
-
           return view ('content.edit')->with([
             'person'=>$person,
             'relationships'=> $relationships,
             'CurrentRelationships' => $CurrentRelationships,
           ]);
         }
-
-
         public function update(request $request, $id)
         {
           $person = Person::find($id);
@@ -101,9 +94,6 @@ class DirectorController extends Controller
         public function delete($id)
         {
           $person = Person::find($id);
-          // if (!$person) {
-          //   return redirect('/')->with('alert', 'Person not found');
-          // }
           $person->delete();
           return redirect('/');
         }

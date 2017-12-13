@@ -20,14 +20,13 @@ Route::get('/', 'DirectorController@index');
 #add a person
 Route::get('/add', 'DirectorController@add');
 Route::post('/add', 'DirectorController@adding');
-#for getting to the forms page
-Route::get('/{id}/edit', 'DirectorController@edit');
-Route::put('/{id}/edit', 'DirectorController@update');
-#for processing
-Route::get('/{id}/delete', 'DirectorController@delete');
 
 Route::get('/read', 'DirectorController@read');
-
+#for getting to the forms page
+Route::get('/{id}', 'DirectorController@edit');
+Route::put('/{id}', 'DirectorController@update');
+#for processing
+Route::get('/{id}/delete', 'DirectorController@delete');
 
 
 Route::get('/debug', function () {

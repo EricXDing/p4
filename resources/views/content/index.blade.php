@@ -6,11 +6,7 @@
 
 
 @section('content')
-
-
-List of all the People in your Network
-<hr>
-
+<div id = 'search'>
 <b>Select a Relationship Category</b>
 <form action="/">
   <select name="selection">
@@ -21,10 +17,10 @@ List of all the People in your Network
   </select>
   <input type="submit">
 </form>
-
 <b>{{ $display }}</b>
-
+</div>
 @foreach ($people as $person)
+        </br>
         <h2>{{ $person['name'] }}</h2>
         <p>Email: {{ $person['email'] }}</p>
         <p>Message for {{ $person['name'] }}
@@ -32,7 +28,8 @@ List of all the People in your Network
         <textarea rows="3" cols="40"></textarea>
         <input type="submit" value="Send Message">
         </form>
-        <a href='{{ $person['id'] }}/edit'>edit</a> | <a href='{{ $person['id'] }}/delete'>delete</a>
+        <a href='{{ $person['id'] }}'>edit</a> | <a href='{{ $person['id'] }}/delete'>delete</a>
+        </br>
 @endforeach
 
 @endsection

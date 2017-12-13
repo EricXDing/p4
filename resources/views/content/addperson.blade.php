@@ -7,14 +7,14 @@
 
 @section('content')
 
-  <form method='POST' action='/add'>
+  <form class='form' method='POST' action='/add'>
       {{ csrf_field() }}
       * Required fields
-      <label for='Name'>* Name</label>
+      <label for='Name'>Name*</label>
       <input type='text' name='name' id='name' value='{{ old('name=""') }}'>
 
-      <label for='email'>* Email</label>
-      <input type='text' name='email' id='email' value='{{ old('email') }}'>
+      <label for='email'>Email*</label>
+      <input type='text' name='email' id='email' value='{{ old('email') }}'></br></br>
 
   @foreach ($relationships as $id => $type)
       <input
@@ -23,7 +23,7 @@
           value="{{ $id }}">{{ $type }}<br>
   @endforeach
 
-      <label for='published'>Comments</label>
+      <label for='comments'>Comments*</label>
       <input type='text' name='comments' id='comments' value='{{ old('comments') }}'>
 
       <input type='submit' value='Submit'>

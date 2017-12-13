@@ -12,6 +12,7 @@ class Relation extends Model
       return $this->belongsToMany('App\Person')->withTimestamps();
     }
 
+
     public static function getForCheckboxes()
     {
       $relations = Relation::orderBy('type')->get();

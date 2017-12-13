@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset='utf-8'>
-	<title>SideBar Menu</title>
+	<title>Personal Network Manager</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="js/ckeditor/ckeditor.js"></script>
 
@@ -11,13 +11,12 @@
     @stack('head')
 
 <body>
-
 	<div id="sidebar">
     <ul>
-      <li><a href="#"><b>NAVIGATION</b></a></li>
-      <li><a href="/">Send Message</a></li>
+
+			<li><a href="read">PLEASE READ</a></li>
+			<li><a href="/">Send Message</a></li>
       <li><a href="add">Add People</a></li>
-      <li><a href="read">PLEASE READ</a></li>
     </ul>
     <div id="sidebar-btn">
         <span></span>
@@ -38,8 +37,10 @@
 	<section>
 		<div id = 'main'>
 			<h1>Personal Network Manager</h1>
+		<div id = 'body'>
 
 		@yield('content')
+		</div>
 
 	</div>
 
